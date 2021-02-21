@@ -1,6 +1,6 @@
 <ng-template #menu>
-  <a mat-list-item routerLink="/" (click)="drawer.close()">INFO & PROJECTS</a>
-  <a mat-list-item routerLink="/posts" (click)="drawer.close()">Posts</a>
+  <a mat-list-item routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="drawer.close()">INFO & PROJECTS</a>
+  <a mat-list-item routerLink="/posts" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="drawer.close()">Posts</a>
   <div *ngIf="(user$ | async)[0] == null;then login_button else logout_button" ></div>    
 
   
@@ -59,15 +59,11 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <mat-toolbar class="mat-toolbar" color="primary" class="mb-4">
+    <mat-toolbar class="mat-toolbar" color="background" class="mb-4">
 
       <!-- Menu content -->
         <mat-nav-list class="menu">
-          <!-- <div> -->
-            <!-- <a mat-list-item>
-              <mat-slide-toggle (change)="onSwitchTheme($event)"></mat-slide-toggle>
-            </a> -->
-        <!-- </div> -->
+
 
           <div style="display: flex;" *ngIf="!(isMobile$ | async)">
             <ng-container *ngTemplateOutlet="menu"></ng-container>
@@ -95,10 +91,18 @@
     <h2 class="welcome" *ngIf="(message$ | async)"> {{ (message$ | async)[0]?.message }}</h2>
 
     <router-outlet></router-outlet>
-
-    <mat-toolbar color="primary" class="footer">
-      <span>Example app</span>
-    </mat-toolbar>
+    <div class="footer">
+      <div>
+        <mat-toolbar style="padding: 5rem 0;">
+          <span>Example app</span>
+        </mat-toolbar>
+      </div>
+      
+    </div>
   </mat-sidenav-content>
 
 </mat-sidenav-container>
+
+<div class="copyright mat-body-2">
+   © JUST-DEV-IT.COM | DESIGN: WIKTOR KUJAWA
+</div>

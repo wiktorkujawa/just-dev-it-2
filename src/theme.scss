@@ -9,7 +9,14 @@ $font: #111111;
   color: #111111;
 }
 
+$color: mat-get-color-config($my-app-theme);
 
+$hover-color: map-get($color, accent); 
+
+.active-link {
+    background-color: mat-color($hover-color) !important; // color will be there
+    border-color: mat-color($hover-color, A400) !important; // a bit different hue
+}
 @include angular-material-theme($my-app-theme);
 .alternate-theme {
   $alternate-primary: mat-palette($mat-red);

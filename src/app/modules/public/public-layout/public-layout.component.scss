@@ -1,5 +1,5 @@
 $hover-color: #FF4136;
-
+$toggle-color: white;
 .sidenav {
   width: 200px;
 }
@@ -15,22 +15,25 @@ $hover-color: #FF4136;
   position: absolute; 
   right: 0; 
   top:0;
-  color: white;
+  color: $toggle-color;
 }
 
 .sidenav {
   .mat-toolbar {
-  background: inherit;
-  }
-  a {
-    &:hover{
-      color: $hover-color;
-    }
+    background: inherit;
   }
 }
 
 .mat-toolbar.mat-primary {
   z-index: 1;
+}
+
+.mat-list-base {
+  padding: 0 !important;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  padding-left: 0 !important;
 }
 
 mat-sidenav-container {
@@ -39,9 +42,6 @@ mat-sidenav-container {
 
 .mat-menu-item {
   text-align: center;
-  &:hover {
-    color: $hover-color;
-  }
 }
 
 .menu {
@@ -50,17 +50,35 @@ mat-sidenav-container {
   justify-content: space-between;
   a {
     &:hover{
-      color: $hover-color;
+      opacity: 0.5;
     }
   }
 }
 
+.mat-list-item {
+  height: 64px !important;
+}
+
+// .active-link {
+//   background-color: $hover-color !important;
+// }
+
 .footer{
   font-size: 0.8rem;
-  justify-content: flex-end !important;
+  width: 100% !important;
+  padding-top: 5rem;
+  // justify-content: flex-end !important;
   position: absolute;
   bottom: 0;
 }
+
+.copyright {
+  display: flex; 
+  justify-content: center; 
+  padding: 5rem 0;
+  color: white
+}
+
 
 .welcome {
   text-align: end;
