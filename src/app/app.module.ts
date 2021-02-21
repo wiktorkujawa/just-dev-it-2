@@ -11,7 +11,7 @@ import { MaterialModule } from './modules/shared/material/material.module';
 import { AuthComponent } from './modules/public/components/elements/auth/auth.component';
 import { DateTimePickerField } from './modules/shared/material/custom-formly/date-time-picker/date-time-picker.component';
 import { FormlyModule } from '@ngx-formly/core';
-import { HomeComponent } from './modules/public/components/pages/home/home.component';
+import { InfoComponent } from './modules/public/components/pages/info/info.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -28,7 +28,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     AdminLayoutComponent,
     AuthComponent,
     DateTimePickerField,
-    HomeComponent
+    InfoComponent
   ],
   imports: [
     FormlyModule.forRoot({ extras: { lazyRender: true }, types: [
