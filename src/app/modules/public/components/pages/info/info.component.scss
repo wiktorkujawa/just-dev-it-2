@@ -16,17 +16,13 @@ $hover-color: #FF4136;
     transform: scale(1.2);
   }
 }
-.main-card {
-  margin: 2rem 2rem 5rem 2rem;
+
+.mat-card-image:first-child {
+  margin-bottom: -16px;
 }
 
 .project-card{
-  margin: 0
-}
-
-.description {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 10rem;
 }
 
 .break-word {
@@ -36,6 +32,7 @@ $hover-color: #FF4136;
     white-space: -o-pre-wrap; /* Opera 7 */    
     word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
+
 
 
 .project-header {
