@@ -1,5 +1,6 @@
 <div class="m-5">
   <article>
+  <header>
   <h1 class="title">About me</h1>
   <p class="about">
     Wiktor Kujawa is a graduated engineer from Gdansk University Of Technology on degree course of Technical Physics with specialization in Applied Physics and former RD engineer in Eltel Networks Energetyka S.A. and a passionate developer and software engineer which loves to challenge with hard problems and modern technologies. <br>
@@ -43,23 +44,49 @@ Knowledgeably connected in the fields of physics, mathematics, engineering and I
     Induced sheath voltages and sheath circulating currents problems
   </mat-list-item>
  </mat-list>
+  </header>
 
  <mat-card class="main-card">
 
   <img mat-card-image src="assets/EM-field-3d.gif" alt="Photo of a Shiba Inu">
-  <mat-card-actions style="display: flex; justify-content: center;" >
-    <a class="project-button" mat-raised-button color="background" href="https://github.com/wiktorkujawa/" >CHECK OUT MY GITHUB PROJECTS</a>
-  </mat-card-actions>
+  <!-- <mat-card-actions style="display: flex; justify-content: center;" >
+    <a class="project-button" mat-stroked-button color="background" href="https://github.com/wiktorkujawa/" >CHECK OUT MY GITHUB PROJECTS</a>
+  </mat-card-actions> -->
 </mat-card>
+<div style="display: flex; 
+justify-content: center;">
+<a class="break-word" mat-stroked-button color="background" href="https://github.com/wiktorkujawa/" >CHECK OUT MY GITHUB PROJECTS</a>
+</div>
 
-<mat-grid-list class="main-card" [cols]="(isMobile$ | async) ? 1 : 2" [gutterSize]="'50px'" rowHeight="1:1">
 
-  <mat-grid-tile>hello</mat-grid-tile>
-  <mat-grid-tile>hello</mat-grid-tile>
-  <mat-grid-tile>hello</mat-grid-tile>
+<section className="projects" id="projects">
+<mat-grid-list class="project-card" [cols]="(isMobile$ | async) ? 1 : 2" [gutterSize]="'10px'" rowHeight="40rem">
+
+  <mat-grid-tile>
+
+  
+      <div>
+          <a class="mat-display-1 break-word" style="display:flex; justify-content:center" mat-button href="https://cinema-manager.herokuapp.com">Project 1<br>
+          Cinema manager app</a> 
+          <a href="https://cinema-manager.herokuapp.com/">
+        <img mat-card-image class="image" src="assets/EM-field-3d.gif"  alt="Photo of a Shiba Inu">
+      </a>
+        <div class="description"> App written with MEAN Stack(MongoDB, Express, Angular, Node.js) contains passport session authentication, API REST and rapidapi database. Frontend created with Angular with interactive components, especially Home component with calendar(angular-calendar).</div>
+          <a mat-stroked-button style="display: flex; justify-content: center;" href="https://github.com/wiktorkujawa/">Full Story</a>
+        <!-- <mat-card-actions style="display: flex; justify-content: center;" >
+          <a class="project-button" mat-raised-button color="background" href="https://github.com/wiktorkujawa/" >CHECK OUT MY GITHUB PROJECTS</a>
+        </mat-card-actions> -->
+      </div>
+
+  </mat-grid-tile>
+
+
+  <mat-grid-tile></mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
 
   
 </mat-grid-list>
+</section>
 
 <!-- <mat-card class="main-card">
 

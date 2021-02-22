@@ -13,7 +13,7 @@ export class InfoComponent implements OnInit {
   constructor(private breakpointObserver: BreakpointObserver) { }
 
   isMobile$: Observable<boolean> = this.breakpointObserver
-    .observe(Breakpoints.XSmall)
+    .observe('(max-width: 850px)')
     .pipe(
       map((result) => result.matches),
       shareReplay()
