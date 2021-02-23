@@ -19,6 +19,7 @@ export class PublicLayoutComponent implements OnInit {
 
   user$!: Observable<any>;
   message$!: Observable<any>;
+  
   isMobile$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.XSmall)
     .pipe(
@@ -72,7 +73,6 @@ export class PublicLayoutComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.loadUser();
-
   }
 
 

@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import * as fromUser from './auth/store/reducers/user.reducer';
 import { UserEffects } from './auth/store/effects/user.effects';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ProjectsComponent } from './modules/public/components/pages/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     AdminLayoutComponent,
     AuthComponent,
     DateTimePickerField,
-    InfoComponent
+    InfoComponent,
+    ProjectsComponent
   ],
   imports: [
     FormlyModule.forRoot({ extras: { lazyRender: true }, types: [

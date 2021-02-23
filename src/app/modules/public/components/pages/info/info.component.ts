@@ -1,7 +1,4 @@
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-info',
@@ -10,14 +7,7 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class InfoComponent implements OnInit {
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
-
-  isMobile$: Observable<boolean> = this.breakpointObserver
-    .observe('(max-width: 850px)')
-    .pipe(
-      map((result) => result.matches),
-      shareReplay()
-    );
+  constructor() { }
 
   ngOnInit(): void {
   }

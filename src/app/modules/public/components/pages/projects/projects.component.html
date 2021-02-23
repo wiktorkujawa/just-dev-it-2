@@ -1,0 +1,183 @@
+<mat-grid-list
+        class="project-card"
+        [cols]="(isMobile$ | async) ? 1 : 2"
+        [gutterSize]="'50px'"
+        rowHeight="40rem"
+      >
+<mat-grid-tile>
+  <div>
+    <a
+      class="mat-display-1 break-word d-flex justify-content-center"
+      mat-button
+      href="https://cinema-manager.herokuapp.com"
+      >Project 1<br />
+      Cinema manager app
+    </a>
+    <a href="https://cinema-manager.herokuapp.com/">
+      <img
+        mat-card-image
+        class="image"
+        src="assets/cinema-app.gif"
+        alt="Gif of page interaction"
+      />
+    </a>
+    <div class="mb-3 mt-3">
+      App written with MEAN Stack(MongoDB, Express, Angular, Node.js)
+      contains passport session authentication, API REST and rapidapi
+      database. Frontend created with Angular with interactive
+      components, especially Home component with
+      calendar(angular-calendar).
+    </div>
+    <a
+      mat-stroked-button
+      class="d-flex justify-content-center"
+      href="https://github.com/wiktorkujawa/cinema-manager-app"
+      >Full Story</a
+    >
+  </div>
+</mat-grid-tile>
+
+<mat-grid-tile>
+  <div>
+    <a
+      class="mat-display-1 break-word d-flex justify-content-center"
+      mat-button
+      href="https://github.com/wiktorkujawa/MagneticAndElectricField2D"
+      >Project 2
+MAGNETIC AND ELECTRIC FIELD 2D</a
+    >
+    <a href="https://vimeo.com/362665837">
+      <img
+        mat-card-image
+        class="image"
+        src="assets/electric-field-2d.gif"
+        alt="Gif of page"
+      />
+    </a>
+    <div class="mb-3 mt-3">
+      Software which allow to calculate magnetic and electric field in two dimensional arrangement of three phase power lines or underground cables. written in Julia programming language and it uses Julia CImGui wrapper.
+    </div>
+    <a
+      mat-stroked-button
+      class="d-flex justify-content-center"
+      href="https://github.com/wiktorkujawa/MagneticAndElectricField2D"
+      >Full Story</a
+    >
+  </div>
+</mat-grid-tile>
+<mat-grid-tile>
+  <div>
+    <a
+      class="mat-display-1 break-word d-flex justify-content-center"
+      mat-button
+      href="https://auth-multer-app.herokuapp.com/"
+      >Project 3<br />
+      Auth with multer app</a
+    >
+    <a href="https://auth-multer-app.herokuapp.com/">
+      <img
+        mat-card-image
+        class="image"
+        src="assets/auth-app.gif"
+        alt="Gif of page"
+      />
+    </a>
+    <div class="mb-3 mt-3">
+      App written with MEAN Stack(MongoDB, Express, Angular, Node.js) contains passport session authentication, passport oauth-google, API REST and adding files to database with multer/gridFs. Frontend created with Angular material components, formly forms, ngx-dropzone.
+    </div>
+    <a
+      mat-stroked-button
+      class="d-flex justify-content-center"
+      href="https://github.com/wiktorkujawa/multiple-auth-app"
+      >Full Story</a
+    >
+  </div>
+</mat-grid-tile>
+
+<mat-grid-tile>
+  <div>
+    <a
+      class="mat-display-1 break-word d-flex justify-content-center"
+      mat-button
+      href="https://karmatt.pl"
+      >Project 4<br />
+      PAGE FOR CLEANING AGENCY</a
+    >
+    <a href="https://karmatt.pl">
+      <img
+        mat-card-image
+        class="image"
+        src="assets/karmatt.gif"
+        alt="Gif of page"
+      />
+    </a>
+    <div class="mb-3 mt-3">
+      Page created with MERN stack. Inludes authentication, password resseting and receiving, carousel, form contact, CMS, forwarded email and google maps connected with mongoDB database. Used React functional components, redux, axios, gridfs and mongoDB Atlas Cluster.
+    </div>
+    <a
+      mat-stroked-button
+      class="d-flex justify-content-center"
+      href="https://karmatt.pl"
+      >Full Story</a
+    >
+  </div>
+</mat-grid-tile>
+
+<mat-grid-tile>
+  <div>
+    <a
+      class="mat-display-1 break-word d-flex justify-content-center"
+      mat-button
+      href="https://cinema-manager.herokuapp.com"
+      >Project 5<br />
+      Magnetic Field 3D</a
+    >
+    <a href="https://vimeo.com/362909878">
+      <img
+        mat-card-image
+        class="image"
+        src="assets/EM-field-3d.gif"
+        alt="Gif of page"
+      />
+    </a>
+    <div class="mb-3 mt-3">
+      Software allow calculating Magnetic Field in three dimensional environment inducted by power lines, underground cables and cable poles. Written in Julia programming language and it uses Julia CImGui wrapper and calculating algorithm implemented with CUDA technology.
+    </div>
+    <a
+      mat-stroked-button
+      class="d-flex justify-content-center"
+      href="https://github.com/wiktorkujawa/"
+      >Full Story</a
+    >
+  </div>
+</mat-grid-tile>
+
+<mat-grid-tile>
+  <div>
+    <a
+      class="mat-display-1 break-word d-flex justify-content-center"
+      mat-button
+      href="https://wiktorkujawa.github.io/"
+      >Project 6<br />
+      Just Dev IT(old)</a
+    >
+    <a href="https://wiktorkujawa.github.io/">
+      <img
+        mat-card-image
+        class="image"
+        [src]="theme==1 ? 'assets/logowhite.svg' : 'assets/logo.svg'"
+        alt="Gif of page"
+      />
+    </a>
+    <div class="mb-3 mt-3">
+      My previous version of my portfolio page deployed on github pages. It was written in React with template Massively by HTML5 UP
+    </div>
+    <a
+      mat-stroked-button
+      class="d-flex justify-content-center"
+      href="https://github.com/wiktorkujawa/wiktorkujawa.github.io"
+      >Full Story</a
+    >
+  </div>
+</mat-grid-tile>
+</mat-grid-list>
