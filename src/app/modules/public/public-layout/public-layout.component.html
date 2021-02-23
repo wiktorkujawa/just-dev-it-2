@@ -1,55 +1,66 @@
 <ng-template #menu>
-  <a mat-list-item routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="drawer.close()">INFO & PROJECTS</a>
-  <a mat-list-item routerLink="/posts" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="drawer.close()">Posts</a>
-  <div *ngIf="(user$ | async)[0] == null;then login_button else logout_button" ></div>    
-
-  
+  <a
+    mat-list-item
+    routerLink="/"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    (click)="drawer.close()"
+    >INFO & PROJECTS</a
+  >
+  <a
+    mat-list-item
+    routerLink="/posts"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    (click)="drawer.close()"
+    >Posts</a
+  >
+  <div
+    *ngIf="(user$ | async)[0] == null; then login_button; else logout_button"
+  ></div>
 </ng-template>
 
 <ng-template #login_button>
-  <a *ngIf="!(isMobile$ | async)" mat-list-item [matMenuTriggerFor]="appMenu"><mat-icon>login</mat-icon> </a>
+  <a *ngIf="!(isMobile$ | async)" mat-list-item [matMenuTriggerFor]="appMenu"
+    ><mat-icon>login</mat-icon>
+  </a>
   <mat-menu #appMenu="matMenu">
     <a mat-menu-item (click)="AuthDialog(true)">Login</a>
     <a mat-menu-item (click)="AuthDialog(false)">Register</a>
   </mat-menu>
-  <div *ngIf="(isMobile$ | async)">
+  <div *ngIf="isMobile$ | async">
     <a mat-list-item (click)="AuthDialog(true)">Login</a>
     <a mat-list-item (click)="AuthDialog(false)">Register</a>
   </div>
 </ng-template>
-
 
 <ng-template #logout_button>
   <a mat-list-item (click)="logout()">Logout</a>
 </ng-template>
 
 <button
-          class="toggle"
-          type="button"
-          aria-label="Toggle sidenav"
-          mat-icon-button
-          (click)="drawer.toggle()"
-          *ngIf="(isMobile$ | async)"
-        >
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        </button>
+  class="toggle"
+  type="button"
+  aria-label="Toggle sidenav"
+  mat-icon-button
+  (click)="drawer.toggle()"
+  *ngIf="isMobile$ | async"
+>
+  <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+</button>
 
 <a mat-button class="logo" routerLink="/">
-  <img src="assets/logowhite.svg" height="150" alt="Kiwi standing on oval">
+  <img src="assets/logowhite.svg" height="150" alt="Kiwi standing on oval" />
 </a>
 
-        
-
-
 <mat-sidenav-container class="sidenav-container container">
-
   <mat-sidenav
     #drawer
     class="sidenav"
     fixedInViewport
     [attr.role]="(isMobile$ | async) ? 'dialog' : 'navigation'"
     [mode]="'over'"
-    [opened]="(isMobile$ | async)"
+    [opened]="isMobile$ | async"
   >
     <!-- Sidenav content  -->
     <mat-toolbar>Menu</mat-toolbar>
@@ -60,49 +71,111 @@
 
   <mat-sidenav-content>
     <mat-toolbar class="mat-toolbar" color="background" class="mb-4">
-
       <!-- Menu content -->
-        <mat-nav-list class="menu">
+      <mat-nav-list class="menu">
+        <div class="d-flex" *ngIf="!(isMobile$ | async)">
+          <ng-container *ngTemplateOutlet="menu"></ng-container>
+        </div>
 
-
-          <div style="display: flex;" *ngIf="!(isMobile$ | async)">
-            <ng-container *ngTemplateOutlet="menu"></ng-container>
-          </div>
-         
-
-
-          <div style="display: flex;">
-            <a mat-list-item>
-              <i class="fab fa-github mb-1"></i>
-            </a>
-            <a mat-list-item>
-              <i class="fab fa-linkedin mb-1"></i>
-            </a>
-            <a mat-list-item>
-              <mat-slide-toggle (change)="onSwitchTheme($event)"></mat-slide-toggle>
-            </a>
-          </div>
-
-
-        </mat-nav-list>
+        <div class="d-flex">
+          <a
+            mat-list-item
+            href="https://github.com/wiktorkujawa/"
+            target="_blank"
+          >
+            <i class="fab fa-github mb-1"></i>
+          </a>
+          <a
+            mat-list-item
+            class="linkedin"
+            href="https://www.linkedin.com/in/wiktor-kujawa-110bb2194/"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin mb-1"></i>
+          </a>
+          <a mat-list-item>
+            <mat-slide-toggle
+              (change)="onSwitchTheme($event)"
+            ></mat-slide-toggle>
+          </a>
+        </div>
+      </mat-nav-list>
     </mat-toolbar>
 
-    <h2 class="welcome" *ngIf="(user$ | async)[0]!==null"> Hello {{ (user$ | async)[0]?.displayName }}</h2>
-    <h2 class="welcome" *ngIf="(message$ | async)"> {{ (message$ | async)[0]?.message }}</h2>
+    <h2 class="welcome" *ngIf="(user$ | async)[0] !== null">
+      Hello {{ (user$ | async)[0]?.displayName }}
+    </h2>
+    <h2 class="welcome" *ngIf="message$ | async">
+      {{ (message$ | async)[0]?.message }}
+    </h2>
 
     <router-outlet></router-outlet>
     <div class="footer">
-      <div>
-        <mat-toolbar style="padding: 5rem 0;">
-          <span>Example app</span>
-        </mat-toolbar>
-      </div>
-      
+      <mat-toolbar class="footer-row align-items-start">
+        <div class="name">
+          <p class="mat-body-strong">ADDRESS</p>
+        </div>
+        <div class="content">
+          <p class="mat-caption">
+            Narutowicza 23d/52 <br />
+            Olsztyn, 10-581 <br />
+            Poland
+          </p>
+        </div>
+      </mat-toolbar>
+      <mat-divider></mat-divider>
+      <mat-toolbar class="footer-row align-items-start">
+        <div class="name">
+          <p class="mat-body-strong">PHONE</p>
+        </div>
+        <div><p class="mat-caption">+48 697 141 580</p></div>
+      </mat-toolbar>
+      <mat-divider></mat-divider>
+      <mat-toolbar class="footer-row">
+        <div class="name">
+          <p class="mat-body-strong" >EMAIL</p>
+        </div>
+        <div>
+          <p class="mat-caption">
+            <a mat-button href="mailto:wiktorkujawa1993@gmail.com"
+              >wiktorkujawa1993@gmail.com</a
+            >
+            <br />
+            <a mat-button href="mailto:support@just-dev-it.com"
+              >support@just-dev-it.com"</a
+            >
+          </p>
+        </div>
+      </mat-toolbar>
+<mat-divider></mat-divider>
+      <mat-toolbar class="footer-row">
+        <div class="name">
+          <p class="mat-body-strong" >SOCIAL</p>
+        </div>
+        <div class="d-flex mb-3">
+          <mat-nav-list class="menu">
+            <a
+              mat-list-item
+              href="https://github.com/wiktorkujawa/"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              mat-list-item
+              class="linkedin"
+              href="https://www.linkedin.com/in/wiktor-kujawa-110bb2194/"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </mat-nav-list>
+        </div>
+      </mat-toolbar>
     </div>
   </mat-sidenav-content>
-
 </mat-sidenav-container>
 
 <div class="copyright mat-body-2">
-   © JUST-DEV-IT.COM | DESIGN: WIKTOR KUJAWA
+  © JUST-DEV-IT.COM | DESIGN: WIKTOR KUJAWA
 </div>

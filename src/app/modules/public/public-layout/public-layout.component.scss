@@ -1,8 +1,10 @@
 $hover-color: #FF4136;
 $toggle-color: white;
+$linkedin-color:#0E76A8;
 .sidenav {
   width: 200px;
 }
+
 
 .logo {
   display: flex;
@@ -63,17 +65,21 @@ mat-sidenav-container {
 .footer{
   font-size: 0.8rem;
   width: 100% !important;
-  padding-top: 5rem;
-  // justify-content: flex-end !important;
-  position: absolute;
-  bottom: 0;
 }
+
+
 
 .copyright {
   display: flex; 
   justify-content: center; 
-  padding: 5rem 0;
+  padding: 4rem 0;
   color: white
+}
+
+.linkedin {
+  &:hover {
+    color: $linkedin-color;
+  }
 }
 
 
@@ -82,14 +88,19 @@ mat-sidenav-container {
   margin-right: 2rem;
 }
 
-.mat-toolbar {
-  display: flex !important;
-  justify-content: space-between !important;
+.footer-row {
+  height: auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 5rem !important;
+
+  .name {
+    margin-right: 5rem;
+  }
 }
 
 mat-sidenav-content {
   box-sizing: border-box;
   position: relative;
   min-height: 100vh;
-  padding-bottom: 5rem;
 }
