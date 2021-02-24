@@ -7,7 +7,7 @@ $linkedin-color:#0E76A8;
 
 
 .toggle {
-  position: absolute; 
+  position: fixed; 
   right: 0; 
   top:0;
   color: $toggle-color;
@@ -33,6 +33,10 @@ $linkedin-color:#0E76A8;
 
 mat-sidenav-container {
   padding: 0 !important;
+}
+
+mat-sidenav-content {
+  overflow: hidden !important;
 }
 
 .mat-menu-item {
@@ -93,7 +97,7 @@ a {
 }
 
 .scroll {
-  height: 25rem;
+  height: 20rem;
   margin: 30rem 0 2rem 0;
   cursor:default;
   text-align: center;
@@ -101,9 +105,9 @@ a {
 }
 
 .logo {
-  height: 25rem;
-  padding: 6rem;
-  button {
+  height: 20rem;
+  padding-top: 10rem;
+  a {
     border: solid white 5px;
   }
   margin: 30rem 0 2rem 0;
