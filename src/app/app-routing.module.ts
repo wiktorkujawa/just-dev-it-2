@@ -12,9 +12,11 @@ const routes: Routes = [
       {
         path: '',
         component: InfoComponent,
+        data: {animation: 'InfoComponent'}
       },
       {
         path: 'posts',
+        data: { animation: 'AboutPage'},
         loadChildren: () =>
           import('./modules/public/components/pages/posts/posts.module').then(
             (m) => m.PostsModule

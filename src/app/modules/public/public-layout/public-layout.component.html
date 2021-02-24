@@ -38,26 +38,44 @@
   <a mat-list-item (click)="logout()">Logout</a>
 </ng-template>
 
-
-
-
 <ng-template #show_logo>
-  <div class="d-flex justify-content-center logo">
-  <button mat-button (click)="scroll(logoScroll)">
-    <img src="assets/logowhite.svg" height="150" alt="Kiwi standing on oval" />
-  </button>
-</div>
+  <div
+    [@logo_animation]="(logo$ | async) ? 'active' : 'inactive'"
+    class="d-flex justify-content-center logo"
+  >
+    <a mat-button routerLink="/">
+      <img
+        src="assets/logowhite.svg"
+        height="150"
+        alt="Kiwi standing on oval"
+      />
+    </a>
+  </div>
 </ng-template>
 
 <ng-template #show_scroll>
-  <div class="d-flex justify-content-center scroll">
+  <div
+    [@logo_animation]="(logo$ | async) ? 'inactive' : 'active'"
+    class="d-flex justify-content-center scroll"
+  >
     <div>
-      <h1 class="mat-display-4" style="font-weight: 500;"> MY PORTFOLIO </h1>
-      <p class="mat-display-1" style="font-style: italic;"> Showcase of my projects and my abilities</p>
-    <a mat-list-item class="scroll_button" (click)="scroll(logoScroll)">
-      <mat-icon>arrow_circle_down</mat-icon>
-    </a>
-  </div>
+      <h1
+        class="mat-display-4"
+        [ngClass]="(isMobile$ | async) ? 'mat-display-2' : 'mat-display-4'"
+        style="font-weight: 500"
+      >
+        MY PORTFOLIO
+      </h1>
+      <p
+        [ngClass]="(isMobile$ | async) ? 'mat-h3' : 'mat-h1'"
+        style="font-style: italic"
+      >
+        Showcase of my projects and my abilities
+      </p>
+      <a mat-list-item class="scroll_button" (click)="scroll(logoScroll)">
+        <mat-icon>arrow_circle_down</mat-icon>
+      </a>
+    </div>
   </div>
 </ng-template>
 
@@ -71,7 +89,7 @@
 >
   <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
 </button>
-<div *ngIf="(logo$ | async); then show_logo; else show_scroll"></div>
+<div *ngIf="logo$ | async; then show_logo; else show_scroll"></div>
 
 <mat-sidenav-container class="sidenav-container container">
   <mat-sidenav
@@ -105,7 +123,6 @@
           >
             <i class="fab fa-github mb-1"></i>
           </a>
-          {{logo$ | async}}
           <a
             mat-list-item
             class="linkedin"
@@ -130,8 +147,11 @@
       {{ (message$ | async)[0]?.message }}
     </h2>
 
-    <router-outlet #logoScroll></router-outlet>
-    <div class="footer">
+    <div class="mt-5" [@routeAnimations]="prepareRoute(outlet)">
+      <router-outlet #logoScroll #outlet="outlet"></router-outlet>
+    </div>
+
+    <!-- <div class="footer">
       <mat-toolbar class="footer-row align-items-start">
         <div class="name">
           <p class="mat-body-strong">ADDRESS</p>
@@ -154,7 +174,7 @@
       <mat-divider></mat-divider>
       <mat-toolbar class="footer-row">
         <div class="name">
-          <p class="mat-body-strong" >EMAIL</p>
+          <p class="mat-body-strong">EMAIL</p>
         </div>
         <div>
           <p class="mat-caption">
@@ -168,10 +188,10 @@
           </p>
         </div>
       </mat-toolbar>
-<mat-divider></mat-divider>
+      <mat-divider></mat-divider>
       <mat-toolbar class="footer-row">
         <div class="name">
-          <p class="mat-body-strong" >SOCIAL</p>
+          <p class="mat-body-strong">SOCIAL</p>
         </div>
         <div class="d-flex mb-3">
           <mat-nav-list class="menu">
@@ -193,8 +213,74 @@
           </mat-nav-list>
         </div>
       </mat-toolbar>
-    </div>
+    </div> -->
   </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-sidenav-container class="sidenav-container container">
+<div class="footer">
+  <mat-toolbar class="footer-row align-items-start">
+    <div class="name">
+      <p class="mat-body-strong">ADDRESS</p>
+    </div>
+    <div class="content">
+      <p class="mat-caption">
+        Narutowicza 23d/52 <br />
+        Olsztyn, 10-581 <br />
+        Poland
+      </p>
+    </div>
+  </mat-toolbar>
+  <mat-divider></mat-divider>
+  <mat-toolbar class="footer-row align-items-start">
+    <div class="name">
+      <p class="mat-body-strong">PHONE</p>
+    </div>
+    <div><p class="mat-caption">+48 697 141 580</p></div>
+  </mat-toolbar>
+  <mat-divider></mat-divider>
+  <mat-toolbar class="footer-row">
+    <div class="name">
+      <p class="mat-body-strong">EMAIL</p>
+    </div>
+    <div>
+      <p class="mat-caption">
+        <a mat-button href="mailto:wiktorkujawa1993@gmail.com"
+          >wiktorkujawa1993@gmail.com</a
+        >
+        <br />
+        <a mat-button href="mailto:support@just-dev-it.com"
+          >support@just-dev-it.com"</a
+        >
+      </p>
+    </div>
+  </mat-toolbar>
+  <mat-divider></mat-divider>
+  <mat-toolbar class="footer-row">
+    <div class="name">
+      <p class="mat-body-strong">SOCIAL</p>
+    </div>
+    <div class="d-flex mb-3">
+      <mat-nav-list class="menu">
+        <a
+          mat-list-item
+          href="https://github.com/wiktorkujawa/"
+          target="_blank"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+        <a
+          mat-list-item
+          class="linkedin"
+          href="https://www.linkedin.com/in/wiktor-kujawa-110bb2194/"
+          target="_blank"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </mat-nav-list>
+    </div>
+  </mat-toolbar>
+</div>
 </mat-sidenav-container>
 
 <div class="copyright mat-body-2">
