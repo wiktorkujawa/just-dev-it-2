@@ -2,12 +2,13 @@ $hover-color: #FF4136;
 $toggle-color: white;
 $linkedin-color:#0E76A8;
 .sidenav {
-  width: 200px;
+  width: 230px;
 }
 
 
 .toggle {
   position: fixed; 
+  z-index: 3;
   right: 0; 
   top:0;
   color: $toggle-color;
@@ -27,6 +28,14 @@ $linkedin-color:#0E76A8;
   padding: 0 !important;
 }
 
+.break-word {
+  white-space: pre-wrap; /* CSS3 */    
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */    
+    white-space: -o-pre-wrap; /* Opera 7 */    
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
 .mat-toolbar-row, .mat-toolbar-single-row {
   padding-left: 0 !important;
 }
@@ -44,9 +53,6 @@ mat-sidenav-content {
 }
 
 .menu {
-  display: flex !important;
-  width: 100%;
-  justify-content: space-between;
   a {
     &:hover{
       opacity: 0.5;
