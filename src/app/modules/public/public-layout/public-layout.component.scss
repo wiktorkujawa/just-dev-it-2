@@ -6,13 +6,6 @@ $linkedin-color:#0E76A8;
 }
 
 
-.logo {
-  display: flex;
-  justify-content: center;
-  margin: 4rem;
-  height: 150px;
-}
-
 .toggle {
   position: absolute; 
   right: 0; 
@@ -82,6 +75,39 @@ mat-sidenav-container {
   }
 }
 
+a {
+  color: white;
+  cursor: pointer;
+}
+
+.scroll_button {
+  mat-icon {
+    font-size: 6rem;
+    margin-right: 4rem;
+    transition: transform .5s; /* Animation */
+    &:hover {
+      transform: scale(1.2);
+      color: $hover-color;
+    }
+  }
+}
+
+.scroll {
+  height: 25rem;
+  margin: 30rem 0 2rem 0;
+  cursor:default;
+  text-align: center;
+  color: white;
+}
+
+.logo {
+  height: 25rem;
+  padding: 6rem;
+  button {
+    border: solid white 5px;
+  }
+  margin: 30rem 0 2rem 0;
+}
 
 .welcome {
   text-align: end;
