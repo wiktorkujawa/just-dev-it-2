@@ -1,6 +1,7 @@
 $hover-color: #FF4136;
 a {
   cursor: pointer;
+  display: inline-block;
   color: $hover-color !important;
   text-decoration: underline dotted !important;
   transition: transform .5s !important; /* Animation */
@@ -8,4 +9,8 @@ a {
   &:hover {
     transform: scale(1.1) !important;
   }
+}
+
+ul {
+  list-style: circle;
 }
