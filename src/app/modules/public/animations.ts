@@ -26,7 +26,7 @@ export const slideInAnimation =
       ]),
       query(':enter', animateChild()),
     ]),
-    transition('* <=> FilterPage', [
+    transition('* <=> *', [
       style({ position: 'relative' }),
       query(':enter, :leave', [
         style({
