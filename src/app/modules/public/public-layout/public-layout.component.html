@@ -38,6 +38,29 @@
   <a mat-list-item (click)="logout()">Logout</a>
 </ng-template>
 
+
+
+
+<ng-template #show_logo>
+  <div class="d-flex justify-content-center logo">
+  <button mat-button (click)="scroll(logoScroll)">
+    <img src="assets/logowhite.svg" height="150" alt="Kiwi standing on oval" />
+  </button>
+</div>
+</ng-template>
+
+<ng-template #show_scroll>
+  <div class="d-flex justify-content-center scroll">
+    <div>
+      <h1 class="mat-display-4" style="font-weight: 500;"> MY PORTFOLIO </h1>
+      <p class="mat-display-1" style="font-style: italic;"> Showcase of my projects and my abilities</p>
+    <a mat-list-item class="scroll_button" (click)="scroll(logoScroll)">
+      <mat-icon>arrow_circle_down</mat-icon>
+    </a>
+  </div>
+  </div>
+</ng-template>
+
 <button
   class="toggle"
   type="button"
@@ -48,10 +71,7 @@
 >
   <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
 </button>
-
-<a mat-button class="logo" routerLink="/">
-  <img src="assets/logowhite.svg" height="150" alt="Kiwi standing on oval" />
-</a>
+<div *ngIf="(logo$ | async); then show_logo; else show_scroll"></div>
 
 <mat-sidenav-container class="sidenav-container container">
   <mat-sidenav
@@ -85,6 +105,7 @@
           >
             <i class="fab fa-github mb-1"></i>
           </a>
+          {{logo$ | async}}
           <a
             mat-list-item
             class="linkedin"
@@ -109,7 +130,7 @@
       {{ (message$ | async)[0]?.message }}
     </h2>
 
-    <router-outlet></router-outlet>
+    <router-outlet #logoScroll></router-outlet>
     <div class="footer">
       <mat-toolbar class="footer-row align-items-start">
         <div class="name">

@@ -1,6 +1,6 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
+import { fromEvent, Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { DOCUMENT } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
@@ -16,6 +16,11 @@ import { selectMessage, selectUser } from 'src/app/auth/store/selectors/user.sel
   styleUrls: ['./public-layout.component.scss'],
 })
 export class PublicLayoutComponent implements OnInit {
+  
+  @ViewChild('logoScroll') div:any;
+
+  logo$: Observable<any> = fromEvent(window, "scroll")
+  .pipe( map(() => window.pageYOffset>this.div.nativeElement.offsetTop+50));
 
   user$!: Observable<any>;
   message$!: Observable<any>;
@@ -32,6 +37,13 @@ export class PublicLayoutComponent implements OnInit {
       ? this.document.body.classList.add('alternate-theme')
       : this.document.body.classList.remove('alternate-theme');
   }
+
+  scroll($el: HTMLElement) {
+    console.log(window.pageYOffset);
+    $el.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+}
+
+
 
   AuthDialog( form: boolean){
     const ref = this.dialog.open( AuthComponent, { 
