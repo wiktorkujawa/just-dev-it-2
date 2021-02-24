@@ -9,6 +9,22 @@
   >
   <a
     mat-list-item
+    routerLink="/skills"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    (click)="drawer.close()"
+    >SKILLS & KNOWLEDGE</a
+  >
+  <a
+    mat-list-item
+    routerLink="/experience"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    (click)="drawer.close()"
+    >EXPERIENCE & EDUCATION</a
+  >
+  <a
+    mat-list-item
     routerLink="/posts"
     routerLinkActive="active-link"
     [routerLinkActiveOptions]="{ exact: true }"

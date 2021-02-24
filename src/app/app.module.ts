@@ -20,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
 import * as fromUser from './auth/store/reducers/user.reducer';
 import { UserEffects } from './auth/store/effects/user.effects';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ProjectsComponent } from './modules/public/components/pages/projects/projects.component';
+import { ProjectsComponent } from './modules/public/components/pages/info/projects/projects.component';
+import { SkillsComponent } from './modules/public/components/pages/skills/skills.component';
+import { ExperienceComponent } from './modules/public/components/pages/experience/experience.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ProjectsComponent } from './modules/public/components/pages/projects/pr
     AuthComponent,
     DateTimePickerField,
     InfoComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    SkillsComponent,
+    ExperienceComponent
   ],
   imports: [
     FormlyModule.forRoot({ extras: { lazyRender: true }, types: [
