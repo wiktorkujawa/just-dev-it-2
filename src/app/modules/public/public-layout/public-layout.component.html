@@ -10,6 +10,15 @@
   >
   <a
     mat-list-item
+    href="/app"
+    class="text-center mat-body break-word"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    (click)="drawer.close()"
+    >APP</a
+  >
+  <a
+    mat-list-item
     routerLink="/skills"
     class="text-center mat-body break-word"
     routerLinkActive="active-link"
@@ -67,7 +76,7 @@
   >
     <a mat-button routerLink="/">
       <img
-        src="assets/logowhite.svg"
+        src="assets/logo/logowhite.svg"
         height="150"
         alt="Kiwi standing on oval"
       />

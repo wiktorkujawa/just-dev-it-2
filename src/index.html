@@ -3,6 +3,28 @@
 <head>
   <meta charset="utf-8">
   <title>Just Dev IT - Web development and Sotfware engineering</title>
+  <style>
+    body { margin: 0; background-color: black }
+    .emscripten {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        margin: 0px;
+        border: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: block;
+        image-rendering: optimizeSpeed;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -o-crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: optimize-contrast;
+        image-rendering: crisp-edges;
+        image-rendering: pixelated;
+        -ms-interpolation-mode: nearest-neighbor;
+    }
+</style>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Just Dev IT - Web Development and Sotfware Engineering" />
@@ -15,7 +37,7 @@
 Knowledgeably connected in the fields of physics, mathematics, engineering and IT. " />
 <meta name="author" content="Wiktor Kujawa" />
 
-  <link rel="icon" type="image/x-icon" href="assets/logowhite.svg">
+  <link rel="icon" type="image/x-icon" href="assets/logo/logowhite.svg">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -23,6 +45,9 @@ Knowledgeably connected in the fields of physics, mathematics, engineering and I
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body class="mat-typography">
+  <!-- <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+    <script type='text/javascript' src="assets/runIndex.js"></script> -->
+    <!-- <script async type="text/javascript" src="assets/index.js"></script> -->
   <app-root></app-root>
 </body>
 </html>

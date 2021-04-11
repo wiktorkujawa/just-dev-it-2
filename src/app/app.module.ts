@@ -23,6 +23,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ProjectsComponent } from './modules/public/components/pages/info/projects/projects.component';
 import { SkillsComponent } from './modules/public/components/pages/skills/skills.component';
 import { ExperienceComponent } from './modules/public/components/pages/experience/experience.component';
+import { WasmAppComponent } from './modules/public/components/pages/wasm-app/wasm-app.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ExperienceComponent } from './modules/public/components/pages/experienc
     InfoComponent,
     ProjectsComponent,
     SkillsComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    WasmAppComponent
   ],
   imports: [
     FormlyModule.forRoot({ extras: { lazyRender: true }, types: [

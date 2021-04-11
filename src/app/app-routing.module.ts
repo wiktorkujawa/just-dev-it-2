@@ -4,6 +4,7 @@ import { AdminLayoutComponent } from './modules/admin/admin-layout/admin-layout.
 import { ExperienceComponent } from './modules/public/components/pages/experience/experience.component';
 import { InfoComponent } from './modules/public/components/pages/info/info.component';
 import { SkillsComponent } from './modules/public/components/pages/skills/skills.component';
+import { WasmAppComponent } from './modules/public/components/pages/wasm-app/wasm-app.component';
 import { PublicLayoutComponent } from './modules/public/public-layout/public-layout.component';
 
 const routes: Routes = [
@@ -19,6 +20,11 @@ const routes: Routes = [
       {
         path: 'skills',
         component: SkillsComponent,
+        data: {animation: 'Two'}
+      },
+      {
+        path: 'app',
+        component: WasmAppComponent,
         data: {animation: 'Two'}
       },
       {
