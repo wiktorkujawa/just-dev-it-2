@@ -8,15 +8,15 @@
     (click)="drawer.close()"
     >INFO & PROJECTS</a
   >
-  <a
-    mat-list-item
-    href="/app"
-    class="d-flex justify-content-center mat-body"
-    routerLinkActive="active-link"
-    [routerLinkActiveOptions]="{ exact: true }"
-    (click)="drawer.close()"
-    >APP</a
-  >
+  <a href="/app">
+    <mat-list-item
+      class="text-center mat-body break-word"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+      (click)="drawer.close()">
+      APP
+    </mat-list-item>
+    </a>
   <a
     mat-list-item
     routerLink="/skills"
