@@ -1,4 +1,4 @@
-@import '~@angular/material/theming';
+@import '@angular/material/theming';
 @include mat-core();
 $my-app-primary: mat-palette($mat-green);
 $my-app-accent:  mat-palette($mat-pink, 500, 900, A100);
