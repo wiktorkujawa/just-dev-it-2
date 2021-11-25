@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "yarn --cwd server start",
+    "start": "npm run --prefix server start",
     "client": "ng serve --open",
-    "server": "yarn --cwd server server",
-    "watch": "yarn --cwd server watch",
-    "dev": "concurrently \"yarn server\" \"yarn client\"",
-    "build": "ng build --prod --output-path dist && yarn --cwd server build",
+    "server": "npm run --prefix server server",
+    "watch": "npm run --prefix server watch",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "ng build --prod --output-path dist && npm --prefix server build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

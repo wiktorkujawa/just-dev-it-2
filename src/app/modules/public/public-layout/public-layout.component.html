@@ -8,14 +8,13 @@
     (click)="drawer.close()"
     >INFO & PROJECTS</a
   >
-  <a href="/app">
-    <mat-list-item
-      class="text-center mat-body break-word"
-      routerLinkActive="active-link"
-      [routerLinkActiveOptions]="{ exact: true }"
-      (click)="drawer.close()">
+  <a 
+    mat-list-item href="/app"
+    class="text-center d-flex justify-content-center mat-body break-word"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    (click)="drawer.close()">
       APP
-    </mat-list-item>
     </a>
   <a
     mat-list-item
@@ -190,12 +189,12 @@
       </mat-nav-list>
     </mat-toolbar>
 
-    <h2 class="welcome" *ngIf="(user$ | async)[0] !== null">
+    <!-- <h2 class="welcome" *ngIf="(user$ | async)[0] !== null">
       Hello {{ (user$ | async)[0]?.displayName }}
     </h2>
     <h2 class="welcome" *ngIf="message$ | async">
       {{ (message$ | async)[0]?.message }}
-    </h2>
+    </h2> -->
 
     <div class="mt-5" [@routeAnimations]="prepareRoute(outlet)">
       <router-outlet #logoScroll #outlet="outlet"></router-outlet>
@@ -212,8 +211,8 @@
     </div>
     <div class="content">
       <p class="mat-caption">
-        Narutowicza 23d/52 <br />
-        Olsztyn, 10-581 <br />
+        Sucharskiego 1a/26 <br />
+        Olsztyn, 10-693 <br />
         Poland
       </p>
     </div>
