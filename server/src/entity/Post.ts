@@ -12,4 +12,7 @@ export class Post {
     @Column()
     content: string;
 
+    @Column()
+    path: string;
+
 }
