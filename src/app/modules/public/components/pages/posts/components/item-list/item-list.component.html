@@ -3,9 +3,6 @@
   <button mat-button (click)="onSelect()" *ngIf="todo" class="name">{{todo.subject}}</button>
 </mat-grid-tile-header>
 {{todo.content}}
-<div class="position-absolute w-100">
-  <img src={{todo.path}} style="object-fit: cover;" alt="">
-</div>
 <mat-grid-tile-footer>
 
 </mat-grid-tile-footer>
