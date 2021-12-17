@@ -35,22 +35,22 @@
     (click)="drawer.close()"
     >EXPERIENCE & EDUCATION</a
   >
-  <!-- <a
+  <a
     mat-list-item
     routerLink="/posts"
     routerLinkActive="active-link"
     [routerLinkActiveOptions]="{ exact: true }"
     (click)="drawer.close()"
     >Posts</a
-  > -->
-  <!-- <div *ngIf="(isMobile$ | async)">
+  >
+  <div *ngIf="(isMobile$ | async)">
   <div
     *ngIf="(user$ | async)[0] == null; then login_button; else logout_button"
   ></div>
-</div> -->
+</div>
 </ng-template>
 
-<!-- <ng-template #login_button>
+<ng-template #login_button>
   <a *ngIf="!(isMobile$ | async)" mat-list-item [matMenuTriggerFor]="appMenu"
     ><mat-icon>login</mat-icon>
   </a>
@@ -62,11 +62,11 @@
     <a mat-list-item (click)="AuthDialog(true)">Login</a>
     <a mat-list-item (click)="AuthDialog(false)">Register</a>
   </div>
-</ng-template> -->
+</ng-template>
 
-<!-- <ng-template #logout_button>
+<ng-template #logout_button>
   <a mat-list-item (click)="logout()">Logout</a>
-</ng-template> -->
+</ng-template>
 
 <ng-template #show_logo>
   <div
@@ -136,7 +136,7 @@
   </mat-sidenav>
 
 <mat-sidenav-container class="sidenav-container container">
-  <!-- <mat-sidenav
+  <mat-sidenav
     #drawer
     class="sidenav"
     fixedInViewport
@@ -148,7 +148,7 @@
     <mat-nav-list>
       <ng-container *ngTemplateOutlet="menu"></ng-container>
     </mat-nav-list>
-  </mat-sidenav> -->
+  </mat-sidenav>
   
 
   <mat-sidenav-content>
@@ -175,11 +175,11 @@
           >
             <i class="fab fa-linkedin mb-1"></i>
           </a>
-          <!-- <div *ngIf="!(isMobile$ | async)">
+          <div *ngIf="!(isMobile$ | async)">
           <div
           *ngIf="(user$ | async)[0] == null; then login_button; else logout_button"
         ></div>
-      </div> -->
+      </div>
           <a mat-list-item>
             <mat-slide-toggle
               (change)="onSwitchTheme($event)"
@@ -189,12 +189,12 @@
       </mat-nav-list>
     </mat-toolbar>
 
-    <!-- <h2 class="welcome" *ngIf="(user$ | async)[0] !== null">
+    <h2 class="welcome" *ngIf="(user$ | async)[0] !== null">
       Hello {{ (user$ | async)[0]?.displayName }}
     </h2>
     <h2 class="welcome" *ngIf="message$ | async">
       {{ (message$ | async)[0]?.message }}
-    </h2> -->
+    </h2>
 
     <div class="mt-5" [@routeAnimations]="prepareRoute(outlet)">
       <router-outlet #logoScroll #outlet="outlet"></router-outlet>

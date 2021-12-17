@@ -32,14 +32,14 @@ const routes: Routes = [
         component: ExperienceComponent,
         data: {animation: 'Three'}
       },
-      // {
-      //   path: 'posts',
-      //   data: { animation: 'Four'},
-      //   loadChildren: () =>
-      //     import('./modules/public/components/pages/posts/posts.module').then(
-      //       (m) => m.PostsModule
-      //     ),
-      // },
+      {
+        path: 'posts',
+        data: { animation: 'Four'},
+        loadChildren: () =>
+          import('./modules/public/components/pages/posts/posts.module').then(
+            (m) => m.PostsModule
+          ),
+      },
     ],
   },
   {
