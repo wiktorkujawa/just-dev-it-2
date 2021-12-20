@@ -34,7 +34,7 @@
     (click)="drawer.close()"
     >EXPERIENCE & EDUCATION</a
   >
-  <a
+  <!-- <a
     mat-list-item
     routerLink="/posts"
     routerLinkActive="active-link"
@@ -42,15 +42,15 @@
     [routerLinkActiveOptions]="{ exact: true }"
     (click)="drawer.close()"
     >POSTS</a
-  >
-  <div *ngIf="(isMobile$ | async)">
+  > -->
+  <!-- <div *ngIf="(isMobile$ | async)">
   <div
     *ngIf="(user$ | async)[0] == null; then login_button; else logout_button"
   ></div>
-</div>
+</div> -->
 </ng-template>
 
-<ng-template #login_button>
+<!-- <ng-template #login_button>
   <a *ngIf="!(isMobile$ | async)" mat-list-item [matMenuTriggerFor]="appMenu"
     ><mat-icon>login</mat-icon>
   </a>
@@ -62,11 +62,11 @@
     <a mat-list-item class="text-center d-flex justify-content-center mat-body break-word" (click)="AuthDialog(true)">Login</a>
     <a mat-list-item class="text-center d-flex justify-content-center mat-body break-word" (click)="AuthDialog(false)">Register</a>
   </div>
-</ng-template>
+</ng-template> -->
 
-<ng-template #logout_button>
+<!-- <ng-template #logout_button>
   <a mat-list-item (click)="logout()">Logout</a>
-</ng-template>
+</ng-template> -->
 
 <ng-template #show_logo>
   <div
@@ -175,11 +175,11 @@
           >
             <i class="fab fa-linkedin mb-1"></i>
           </a>
-          <div *ngIf="!(isMobile$ | async)">
+          <!-- <div *ngIf="!(isMobile$ | async)">
           <div
           *ngIf="(user$ | async)[0] == null; then login_button; else logout_button"
         ></div>
-      </div>
+      </div> -->
           <a mat-list-item>
             <mat-slide-toggle
               (change)="onSwitchTheme($event)"
