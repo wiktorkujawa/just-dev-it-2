@@ -15,7 +15,8 @@ export class AddPostComponent implements OnInit {
 
   postData: addPostModel = {
     subject:'',
-    content:''
+    content:'',
+    path: ''
   };
 
 
@@ -46,7 +47,8 @@ fields: FormlyFieldConfig[] = [
   onSubmit() {
     this.addPost.emit({
       subject: this.postData.subject,
-      content: this.postData.content
+      content: this.postData.content,
+      path: this.postData.path
     });  
   }
 

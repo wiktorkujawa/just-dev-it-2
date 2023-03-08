@@ -2,25 +2,24 @@
   <a
     mat-list-item
     routerLink="/"
-    class="text-center mat-body break-word"
+    class="text-center d-flex justify-content-center mat-body break-word"
     routerLinkActive="active-link"
     [routerLinkActiveOptions]="{ exact: true }"
     (click)="drawer.close()"
     >INFO & PROJECTS</a
   >
-  <a href="/app">
-    <mat-list-item
-      class="text-center mat-body break-word"
-      routerLinkActive="active-link"
-      [routerLinkActiveOptions]="{ exact: true }"
-      (click)="drawer.close()">
+  <a 
+    mat-list-item href="/app"
+    class="text-center d-flex justify-content-center mat-body break-word"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    (click)="drawer.close()">
       APP
-    </mat-list-item>
     </a>
   <a
     mat-list-item
     routerLink="/skills"
-    class="text-center mat-body break-word"
+    class="text-center d-flex justify-content-center mat-body break-word"
     routerLinkActive="active-link"
     [routerLinkActiveOptions]="{ exact: true }"
     (click)="drawer.close()"
@@ -28,10 +27,9 @@
   >
   <a
     mat-list-item
-    
     routerLink="/experience"
     routerLinkActive="active-link"
-    class="text-center mat-body break-word"
+    class="text-center d-flex justify-content-center mat-body break-word"
     [routerLinkActiveOptions]="{ exact: true }"
     (click)="drawer.close()"
     >EXPERIENCE & EDUCATION</a
@@ -40,9 +38,10 @@
     mat-list-item
     routerLink="/posts"
     routerLinkActive="active-link"
+    class="text-center d-flex justify-content-center mat-body break-word"
     [routerLinkActiveOptions]="{ exact: true }"
     (click)="drawer.close()"
-    >Posts</a
+    >POSTS</a
   > -->
   <!-- <div *ngIf="(isMobile$ | async)">
   <div
@@ -51,7 +50,7 @@
 </div> -->
 </ng-template>
 
-<ng-template #login_button>
+<!-- <ng-template #login_button>
   <a *ngIf="!(isMobile$ | async)" mat-list-item [matMenuTriggerFor]="appMenu"
     ><mat-icon>login</mat-icon>
   </a>
@@ -60,14 +59,14 @@
     <a mat-menu-item (click)="AuthDialog(false)">Register</a>
   </mat-menu>
   <div *ngIf="isMobile$ | async">
-    <a mat-list-item (click)="AuthDialog(true)">Login</a>
-    <a mat-list-item (click)="AuthDialog(false)">Register</a>
+    <a mat-list-item class="text-center d-flex justify-content-center mat-body break-word" (click)="AuthDialog(true)">Login</a>
+    <a mat-list-item class="text-center d-flex justify-content-center mat-body break-word" (click)="AuthDialog(false)">Register</a>
   </div>
-</ng-template>
+</ng-template> -->
 
-<ng-template #logout_button>
+<!-- <ng-template #logout_button>
   <a mat-list-item (click)="logout()">Logout</a>
-</ng-template>
+</ng-template> -->
 
 <ng-template #show_logo>
   <div
@@ -190,12 +189,12 @@
       </mat-nav-list>
     </mat-toolbar>
 
-    <h2 class="welcome" *ngIf="(user$ | async)[0] !== null">
+    <!-- <h2 class="welcome" *ngIf="(user$ | async)[0] !== null">
       Hello {{ (user$ | async)[0]?.displayName }}
     </h2>
     <h2 class="welcome" *ngIf="message$ | async">
       {{ (message$ | async)[0]?.message }}
-    </h2>
+    </h2> -->
 
     <div class="mt-5" [@routeAnimations]="prepareRoute(outlet)">
       <router-outlet #logoScroll #outlet="outlet"></router-outlet>
@@ -212,8 +211,8 @@
     </div>
     <div class="content">
       <p class="mat-caption">
-        Narutowicza 23d/52 <br />
-        Olsztyn, 10-581 <br />
+        Sucharskiego 1a/26 <br />
+        Olsztyn, 10-693 <br />
         Poland
       </p>
     </div>
