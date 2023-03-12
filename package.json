@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run --prefix server start",
+    "start": "ng serve",
     "client": "ng serve --open",
     "server": "npm run --prefix server server",
     "watch": "npm run --prefix server watch",
