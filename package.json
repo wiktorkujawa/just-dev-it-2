@@ -8,7 +8,7 @@
     "server": "npm run --prefix server server",
     "watch": "npm run --prefix server watch",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "ng build --configuration production --output-path dist && npm run --prefix server build",
+    "build": "ng build --configuration production --output-path dist",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
